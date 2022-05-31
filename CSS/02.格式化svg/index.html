@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>格式化svg</title>
+  </head>
+  <body></body>
+  <script type="module">
+    import { svgJson } from "./static/index.js";
+    import { svg_110 } from "./static/index_110.js";
+
+    let circleLists = [];
+    let lineLists = [];
+    let polylineLists = [];
+    let textLists = [];
+    let rectLists = [];
+    let classColor = {
+      "cls-1": "#00ffec",
+      "cls-2": "#00ffec",
+      "cls-3": "#00ffec",
+      "cls-4": "#00ffec",
+    };
+
+    function formatSvgJson(lists) {
+      // console.log(lists);
+      lists.forEach((item) => {
+        // 递归
+        if (item.g) {
+          formatSvgJson([item.g]);
+        }
+
+        // circle
+        // if (item.circle && Array.isArray(item.circle)) {
+        //   circleLists.push({
+        //     class: item.circle["-class"],
+        //     cx: item.circle["-cx"],
+        //     cy: item.circle["-cy"],
+        //     r: item.circle["-r"],
+        //   });
+        // }
+
+        if (item.circle && item.circle.length > 0) {
+          item.circle.forEach((circleItem) => {
+            circleLists.push({
+              class: circleItem["-class"],
+              cx: circleItem["-cx"],
+              cy: circleItem["-cy"],
+              r: circleItem["-r"],
+            });
+          });
+        }
+
+        // line
+        if (item.line && item.line.length > 0) {
+          item.line.forEach((lineItem) => {
+            lineLists.push({
+              class: lineItem["-class"],
+              x1: lineItem["-x1"],
+              y1: lineItem["-y1"],
+              x2: lineItem["-x2"],
+              y2: lineItem["-y2"],
+            });
+          });
+        }
+
+        //polyline
+        if (item.polyline && item.polyline.length > 0) {
+          item.polyline.forEach((polylineItem) => {
+            polylineLists.push({
+              class: polylineItem["-class"],
+              points: polylineItem["-points"],
+            });
+          });
+        }
+        // text
+        if (item.text && item.text.length > 0) {
+          item.text.forEach((textItem) => {
+            textLists.push({
+              class: textItem["-class"],
+              text: textItem["#text"],
+              transform: textItem["-transform"],
+            });
+          });
+        }
+        // rect
+        if (item.rect && item.rect.length > 0) {
+          item.rect.forEach((rectItem) => {
+            rectLists.push({
+              class: rectItem["-class"],
+              x: rectItem["-x"],
+              y: rectItem["-y"],
+              width: rectItem["-width"],
+              height: rectItem["-height"],
+            });
+          });
+        }
+      });
+
+      console.log("circleLists:", circleLists);
+      console.log("lineLists:", lineLists);
+      console.log("polylineLists:", polylineLists);
+      console.log("textLists:", textLists);
+      console.log("rectLists:", rectLists);
+    }
+    let lists = [svg_110.g]; // 110KV线路
+    console.log("110KV线路=>", lists);
+    formatSvgJson(lists);
+  </script>
+</html>
