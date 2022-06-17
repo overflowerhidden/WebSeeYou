@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>云南地图数据</title>
+    <script src="./data.js"></script>
+  </head>
+  <body></body>
+  <script>
+    let city = data.features;
+    let list = [];
+    city.forEach((ele) => {
+      list.push(ele.properties);
+    });
+    // console.log(JSON.stringify(list));
+    console.log(list);
+  </script>
+</html>
