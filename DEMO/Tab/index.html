@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>导航页</title>
+    <script src="../../Public/jquery-3.4.1.js"></script>
+
+    <style>
+      .tab {
+        width: 100%;
+        height: 49px;
+        border: 1px solid #e2e2e2;
+        border-bottom: 0px solid #e2e2e2;
+        border-left: 0px solid #e2e2e2;
+        border-radius: 10px 10px 0px 0px;
+        overflow: hidden;
+        background: #f6f6f6;
+      }
+      .tab .part {
+        float: left;
+        width: 10%;
+        height: 100%;
+        color: #b1b1b1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        font-weight: bolder;
+        border-right: 1px solid #e2e2e2;
+        border-bottom: 1px solid #e2e2e2;
+        cursor: pointer;
+      }
+      .tab .part:nth-of-type(1) {
+        border-top-left-radius: 10px;
+      }
+
+      .tab .other {
+        float: left;
+        width: 60%;
+        height: 100%;
+        border-bottom: 1px solid #e2e2e2;
+      }
+
+      .tab .active {
+        color: #009999;
+        background: #fff;
+        border-top: 2px solid #009999;
+        border-bottom: 0px solid #e2e2e2;
+        font-family: SourceHanSans-Bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tab">
+      <div class="part active">台区线损</div>
+      <div class="part">分时线损</div>
+      <div class="part">分段线损</div>
+      <div class="part">分项线损</div>
+      <div class="other"></div>
+    </div>
+  </body>
+
+  <script>
+    let currentTabName = "台区线损";
+    $(".part").click((e) => {
+      currentTabName = e.target.innerText;
+      $(e.target).addClass("active").siblings(".part").removeClass("active");
+    });
+  </script>
+</html>
