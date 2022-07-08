@@ -1,0 +1,115 @@
+<div class="dropzone">
+  <div
+    id="draggable"
+    draggable="true"
+    ondragstart="event.dataTransfer.setData('text/plain',null)"
+  >
+    This div is draggable
+  </div>
+</div>
+<div class="dropzone"></div>
+<div class="dropzone"></div>
+<div class="dropzone"></div>
+
+<style>
+  #draggable {
+    width: 200px;
+    height: 20px;
+    text-align: center;
+    background: white;
+  }
+
+  .dropzone {
+    width: 200px;
+    height: 20px;
+    background: blueviolet;
+    margin-bottom: 10px;
+    padding: 10px;
+  }
+</style>
+
+<script>
+  var dragged;
+
+  /* 拖动目标元素时触发 drag 事件 */
+  document.addEventListener("drag", function (event) {}, false);
+
+  // 1.当用户开始拖动一个元素或者一个选择文本的时候
+  document.addEventListener(
+    "dragstart",
+    function (event) {
+      console.log("dragstart");
+      // 保存拖动元素的引用 (ref.)
+      dragged = event.target;
+      // 使其半透明
+      event.target.style.opacity = 0.5;
+    },
+    false
+  );
+
+  // 拖放事件在拖放操作结束时触发 (通过释放鼠标按钮或单击 escape 键)。
+  document.addEventListener(
+    "dragend",
+    function (event) {
+      console.log("dragend");
+      // 重置透明度
+      event.target.style.opacity = "";
+    },
+    false
+  );
+
+  /* 放置目标元素时触发事件 */
+  // 当元素或者选择的文本被拖拽到一个有效的放置目标上时，触发 dragover 事件（每几百毫秒触发一次）。
+  document.addEventListener(
+    "dragover",
+    function (event) {
+      console.log("dragover");
+      // 阻止默认动作以启用 drop
+      event.preventDefault();
+    },
+    false
+  );
+
+  // 当拖动的元素或被选择的文本进入有效的放置目标时
+  document.addEventListener(
+    "dragenter",
+    function (event) {
+      console.log("dragenter");
+      // 当可拖动的元素进入可放置的目标时高亮目标节点
+      if (event.target.className == "dropzone") {
+        event.target.style.background = "purple";
+      }
+    },
+    false
+  );
+
+  // 当一个被拖动的元素或者被选择的文本离开一个有效的拖放目标时，将会触发dragleave 事件。
+  document.addEventListener(
+    "dragleave",
+    function (event) {
+      console.log("dragleave");
+      // 当拖动元素离开可放置目标节点，重置其背景
+      if (event.target.className == "dropzone") {
+        event.target.style.background = "";
+      }
+    },
+    false
+  );
+
+  // 当一个元素或是选中的文字被拖拽释放到一个有效的释放目标位置时，drop 事件被抛出。
+  document.addEventListener(
+    "drop",
+    function (event) {
+      console.log("drop");
+      // 阻止默认动作（如打开一些元素的链接）
+      event.preventDefault();
+      // 将拖动的元素到所选择的放置目标节点中
+      if (event.target.className == "dropzone") {
+        event.target.style.background = "";
+        dragged.parentNode.removeChild(dragged);
+        event.target.appendChild(dragged);
+      }
+    },
+    false
+  );
+</script>
