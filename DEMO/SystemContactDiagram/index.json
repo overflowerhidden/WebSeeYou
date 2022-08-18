@@ -1,0 +1,124 @@
+{
+  "config": [
+    {
+      "id": "1000001",
+      "name": "陈高371",
+      "status": "open",
+      "rotate": 90,
+      "color": "#e53333",
+      "position": [
+        434,
+        953
+      ],
+      "PQIPosition": [
+        0,
+        -50
+      ]
+    },
+    {
+      "id": "1000002",
+      "name": "陈高371",
+      "status": "open",
+      "rotate": 90,
+      "color": "#e53333",
+      "position": [
+        434,
+        1230
+      ],
+      "PQIPosition": [
+        0,
+        -50
+      ]
+    },
+    {
+      "id": "1000001",
+      "name": "陈高371",
+      "status": "open",
+      "rotate": 90,
+      "color": "#e53333",
+      "position": [
+        434,
+        953
+      ],
+      "PQIPosition": [
+        0,
+        -50
+      ]
+    },
+    {
+      "id": "1000003",
+      "name": "陈高371",
+      "status": "open",
+      "rotate": 90,
+      "color": "#e53333",
+      "position": [
+        434,
+        1545
+      ],
+      "PQIPosition": [
+        0,
+        50
+      ]
+    },
+    {
+      "id": "1000004",
+      "name": "陈高371",
+      "status": "open",
+      "rotate": 0,
+      "color": "#e53333",
+      "position": [
+        568,
+        938
+      ],
+      "PQIPosition": [
+        -10,
+        80
+      ]
+    },
+    {
+      "id": "1000005",
+      "name": "陈高371",
+      "status": "open",
+      "rotate": 0,
+      "color": "#e53333",
+      "position": [
+        757,
+        1094
+      ],
+      "PQIPosition": [
+        -10,
+        80
+      ]
+    },
+    {
+      "id": "1000006",
+      "name": "陈高371",
+      "status": "open",
+      "rotate": 0,
+      "color": "#e53333",
+      "position": [
+        757,
+        1391
+      ],
+      "PQIPosition": [
+        -10,
+        80
+      ]
+    },
+    {
+      "id": "1000007",
+      "name": "陈高377",
+      "status": "close",
+      "rotate": 0,
+      "color": "#e53333",
+      "position": [
+        854,
+        1093
+      ],
+      "PQIPosition": [
+        -10,
+        80
+      ]
+    }
+  ]
+}
