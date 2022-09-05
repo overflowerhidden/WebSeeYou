@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>时间轴</title>
+
+    <style>
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        background: #07224a;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .shaftOuter {
+        width: 1450px;
+        height: 420px;
+        overflow: hidden;
+        border: 2px seagreen solid;
+        position: relative;
+      }
+
+      .shaftOuter::-webkit-scrollbar,
+      .part .message::-webkit-scrollbar {
+        display: none;
+      }
+
+      .shaftNexine {
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+
+      .part {
+        width: 290px;
+        height: 100%;
+        float: left;
+      }
+
+      .part .time {
+        width: 196px;
+        height: 60px;
+        box-sizing: border-box;
+        border: 2px #ccc solid;
+        background: #ccc;
+        color: #fff;
+        padding: 5px 0 0;
+        margin: 10px auto;
+        font-size: 20px;
+      }
+      .part.active .time {
+        border: 2px #fff solid;
+        background: #08274e;
+      }
+      .part .time div {
+        width: 100%;
+        height: 25px;
+        line-height: 25px;
+        text-align: center;
+      }
+
+      .part .line {
+        width: 100%;
+        height: 40px;
+        box-sizing: border-box;
+        margin: 10px auto;
+        position: relative;
+      }
+
+      .part .line .borderLine {
+        width: 100%;
+        height: 5px;
+        line-height: 5px;
+        border-top: 2px solid #114782;
+        border-bottom: 2px solid #114782;
+        box-sizing: border-box;
+        position: absolute;
+        bottom: 50%;
+      }
+
+      .part:nth-of-type(1) .line .borderLine {
+        width: 50%;
+        position: absolute;
+        right: 0;
+        bottom: 50%;
+      }
+
+      .part:nth-last-child(1) .line .borderLine {
+        width: 50%;
+        position: absolute;
+        left: 0;
+        bottom: 50%;
+      }
+
+      .part .message {
+        width: 230px;
+        height: 276px;
+        box-sizing: border-box;
+        border-radius: 10px;
+        border: 2px solid #2262a5;
+        color: #fff;
+        overflow: auto;
+        font-size: 20px;
+        margin: 0 auto;
+      }
+
+      .part .message .info {
+        width: 100%;
+        height: 68px;
+        padding: 5px 0 0;
+        box-sizing: border-box;
+      }
+
+      .part .message .info div {
+        width: 100%;
+        height: 25px;
+        line-height: 25px;
+        text-align: center;
+      }
+
+      .part .message .info .val {
+        height: 35px;
+        line-height: 35px;
+        color: #77d2ff;
+        font-size: 30px;
+      }
+
+      .part .message .info:nth-of-type(2n-1) {
+        background: #102e50;
+      }
+    </style>
+
+    <script src="../../Public/jquery-3.4.1.js"></script>
+  </head>
+  <body>
+    <div class="shaftOuter">
+      <div class="shaftNexine"></div>
+    </div>
+  </body>
+
+  <script>
+    const config = [
+      ["子时", "23-1点"],
+      ["丑时", "1-3点"],
+      ["寅时", "3-5点"],
+      ["卯时", "5-7点"],
+      ["辰时", "7-9点"],
+      ["巳时", "9-11点"],
+      ["午时", "11-13点"],
+      ["未时", "13-15点"],
+      ["申时", "15-17点"],
+      ["酉时", "17-19点"],
+      ["戌时", "19-21点"],
+      ["亥时", "21-23点"],
+    ];
+
+    const data = [
+      ["子时", "日冻结任务（条）", "4472"],
+      ["子时", "曲线任务（条）", "3261"],
+      ["子时", "定制化采集任务（条）", "66381"],
+      ["子时", "临时巡测任务（条）", "2197"],
+      ["丑时", "日冻结任务（条）", "4472"],
+      ["寅时", "日冻结任务（条）", "4472"],
+      ["卯时", "日冻结任务（条）", "4472"],
+      ["辰时", "日冻结任务（条）", "4472"],
+      ["巳时", "日冻结任务（条）", "4472"],
+      ["午时", "日冻结任务（条）", "4472"],
+      ["未时", "日冻结任务（条）", "4472"],
+      ["申时", "日冻结任务（条）", "4472"],
+      ["酉时", "日冻结任务（条）", "4472"],
+      ["戌时", "日冻结任务（条）", "4472"],
+      ["亥时", "日冻结任务（条）", "4472"],
+    ];
+    let dom1 = "";
+    config.forEach((item) => {
+      let list = data.filter((ele) => ele[0] == item[0]);
+      let dom2 = "";
+      list.forEach((ele) => {
+        dom2 += `<div class="info">
+                  <div class="title">${ele[1]}</div>
+                  <div class="val">${ele[2]}</div>
+                </div>`;
+      });
+
+      dom1 += `<div class="part">
+                <div class="time">
+                  <div class="one">${item[0]}</div>
+                  <div class="two">${item[1]}</div>
+                </div>
+                <div class="line">
+                  <div class="borderLine"></div>
+                </div>
+                <div class="message">
+                  ${dom2}
+                </div>
+              </div>`;
+    });
+
+    $(".shaftNexine").css({ width: `${config.length * 290}px` });
+    $(".shaftNexine").html(dom1);
+
+    let currentTime = Math.floor(new Date().getHours() / 2);
+    // let currentTime = 0;
+    function loopSelect(time) {
+      console.log(time, $(".shaftNexine .part").eq(time));
+      $(".shaftNexine .part")
+        .eq(time)
+        .addClass("active")
+        .siblings(".part")
+        .removeClass("active");
+
+      let leftVal = -(time - 2) * 290;
+      if (time < 3) {
+        leftVal = 0;
+      }
+      if (time > 9) {
+        leftVal = -2030;
+      }
+      $(".shaftNexine").animate({ left: `${leftVal}px` });
+    }
+
+    loopSelect(currentTime);
+
+    // setInterval(() => {
+    //   currentTime = currentTime >= 11 ? 0 : currentTime + 1;
+    //   loopSelect(currentTime);
+    // }, 2000);
+  </script>
+</html>
