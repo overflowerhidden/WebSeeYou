@@ -22,7 +22,7 @@
         width: 1450px;
         height: 420px;
         overflow: hidden;
-        border: 2px seagreen solid;
+        /* border: 2px seagreen solid; */
         position: relative;
       }
 
@@ -44,19 +44,17 @@
       }
 
       .part .time {
-        width: 196px;
-        height: 60px;
+        width: 194px;
+        height: 76px;
         box-sizing: border-box;
-        border: 2px #ccc solid;
-        background: #ccc;
+        background: url("./package/border.png") no-repeat;
         color: #fff;
-        padding: 5px 0 0;
-        margin: 10px auto;
+        padding: 20px 0 0;
+        margin: 0 auto;
         font-size: 20px;
       }
       .part.active .time {
-        border: 2px #fff solid;
-        background: #08274e;
+        background: url("./package/borderActive.png") no-repeat;
       }
       .part .time div {
         width: 100%;
@@ -82,6 +80,19 @@
         box-sizing: border-box;
         position: absolute;
         bottom: 50%;
+      }
+
+      .part .line .point {
+        width: 34px;
+        height: 33px;
+        background: url("./package/point.png") no-repeat;
+        position: absolute;
+        top: 2%;
+        left: 44%;
+      }
+
+      .part.active .line .point {
+        background: url("./package/pointActive.png") no-repeat;
       }
 
       .part:nth-of-type(1) .line .borderLine {
@@ -145,6 +156,7 @@
   </body>
 
   <script>
+    // 基础配置
     const config = [
       ["子时", "23-1点"],
       ["丑时", "1-3点"],
@@ -160,10 +172,12 @@
       ["亥时", "21-23点"],
     ];
 
+    // 数据
     const data = [
       ["子时", "日冻结任务（条）", "4472"],
       ["子时", "曲线任务（条）", "3261"],
       ["子时", "定制化采集任务（条）", "66381"],
+      ["子时", "临时巡测任务（条）", "2197"],
       ["子时", "临时巡测任务（条）", "2197"],
       ["丑时", "日冻结任务（条）", "4472"],
       ["寅时", "日冻结任务（条）", "4472"],
@@ -172,13 +186,15 @@
       ["巳时", "日冻结任务（条）", "4472"],
       ["午时", "日冻结任务（条）", "4472"],
       ["未时", "日冻结任务（条）", "4472"],
+      ["未时", "曲线任务（条）", "4472"],
       ["申时", "日冻结任务（条）", "4472"],
       ["酉时", "日冻结任务（条）", "4472"],
       ["戌时", "日冻结任务（条）", "4472"],
       ["亥时", "日冻结任务（条）", "4472"],
     ];
+
     let dom1 = "";
-    config.forEach((item) => {
+    config.forEach((item, index) => {
       let list = data.filter((ele) => ele[0] == item[0]);
       let dom2 = "";
       list.forEach((ele) => {
@@ -188,13 +204,14 @@
                 </div>`;
       });
 
-      dom1 += `<div class="part">
+      dom1 += `<div class="part" data-index="${index}">
                 <div class="time">
                   <div class="one">${item[0]}</div>
                   <div class="two">${item[1]}</div>
                 </div>
                 <div class="line">
                   <div class="borderLine"></div>
+                  <div class="point"></div>
                 </div>
                 <div class="message">
                   ${dom2}
@@ -205,15 +222,17 @@
     $(".shaftNexine").css({ width: `${config.length * 290}px` });
     $(".shaftNexine").html(dom1);
 
-    let currentTime = Math.floor(new Date().getHours() / 2);
+    let currentTime = Math.ceil(new Date().getHours() / 2);
+    let currentTimeCopy = Math.ceil(new Date().getHours() / 2);
     // let currentTime = 0;
-    function loopSelect(time) {
-      console.log(time, $(".shaftNexine .part").eq(time));
-      $(".shaftNexine .part")
-        .eq(time)
-        .addClass("active")
-        .siblings(".part")
-        .removeClass("active");
+    function loopSelect(time, isActive = true) {
+      if (isActive) {
+        $(".shaftNexine .part")
+          .eq(time)
+          .addClass("active")
+          .siblings(".part")
+          .removeClass("active");
+      }
 
       let leftVal = -(time - 2) * 290;
       if (time < 3) {
@@ -227,9 +246,22 @@
 
     loopSelect(currentTime);
 
-    // setInterval(() => {
-    //   currentTime = currentTime >= 11 ? 0 : currentTime + 1;
-    //   loopSelect(currentTime);
-    // }, 2000);
+    setInterval(() => {
+      // currentTime = currentTime >= 11 ? 0 : currentTime + 1;
+      currentTime = Math.ceil(new Date().getHours() / 2);
+      // console.log(new Date().getHours());
+      console.log(currentTime == currentTimeCopy, currentTime, currentTimeCopy);
+
+      // 增加触发条件
+      if (currentTime == currentTimeCopy) return;
+      loopSelect(currentTime);
+      currentTimeCopy = currentTime;
+    }, 2000);
+
+    // 通过点击控制左右移动
+    $(".shaftNexine .part").click((ev) => {
+      const index = ev.currentTarget.dataset.index;
+      loopSelect(index, false);
+    });
   </script>
 </html>
