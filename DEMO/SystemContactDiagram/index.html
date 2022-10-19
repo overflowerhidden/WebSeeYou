@@ -1,135 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>系统联络图</title>
+    <script src="../../Public/jquery-3.4.1.js"></script>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>系统联络图</title>
-  <script src="../../Public/jquery-3.4.1.js"></script>
-
-  <style>
-    * {
-      padding: 0;
-      margin: 0;
-    }
-
-    html,
-    body {
-      width: 100%;
-      height: 100%;
-    }
-
-    .diagram {
-      width: 3812px;
-      height: 2160px;
-      background: url('./image/35kV.jpg') no-repeat;
-      position: relative;
-    }
-
-    .diagram .part {
-      width: 62px;
-      height: 32px;
-    }
-
-    .diagram .part .switch {
-      width: 100%;
-      height: 100%;
-      border-radius: 5px;
-      box-sizing: border-box;
-      border: 6px solid #ccc;
-    }
-
-    .diagram .part .pqi {
-      font-size: 20px;
-      font-family: 'siyuan';
-      color: #fff;
-    }
-  </style>
-</head>
-
-<body>
-  <div id="diagram" class="diagram"></div>
-</body>
-
-<script>
-  const config = {
-    // 公共
-    width: 100, // 宽度
-    height: 50, // 高度
-    fontSize: 50, // 电流/有功文本大小
-    fontFamily: "siyuan", // 电流/有功文本类型
-    fontColor: "#fff", // 电流/有功文本颜色
-    radius: 15, // 圆角
-    defaultColor: "#0b1f50", // 底色
-    isYouGong: true, // 是否展示有功
-    isYouGong: true, // 是否展示无功
-    isDianLiu: true, // 是否展示电流
-
-    // 单个
-    id: "1000001", // 开关唯一标识
-    name: "陈高371", // 开关名称
-    status: "open", // open/close 开关状态
-    rotate: 90, // 旋转角度
-    color: "#e53333", // 颜色
-    position: [0, 0], // 开关位置
-    PQIPosition: [0, 0], // PQI位置
-  };
-  const data = ["id", "状态", "电流", "有功"];
-
-  const defaultConfig = {
-    width: 62,
-    height: 32,
-    radius: 15,
-    defaultColor: "#0b1f50",
-    fontSize: 50,
-    fontFamily: "siyuan",
-    fontColor: "#fff",
-  };
-
-  // 获取开关配置文件
-  function getJsonData() {
-    let dataObj = undefined;
-    $.ajax({
-      url: './index.json',
-      type: "GET",
-      dataType: "json",
-      async: false,
-      success: function (data) {
-        dataObj = data;
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
       }
-    });
-    return dataObj.config;
-  }
 
-  const dataLists = [
-    ['1000001', 'close', '20', '30', '40'],
-    ['1000002', 'close', '20', '30', '40'],
-    ['1000003', 'open', '20', '30', '40'],
-    ['1000004', 'open', '20', '30', '40'],
-    ['1000005', 'close', '20', '30', '40'],
-    ['1000006', 'open', '20', '30', '40'],
-    ['1000007', 'close', '20', '30', '40'],
-  ]
-  const switchConfig = getJsonData();
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+      }
 
-  function setDomLists(config, lists) {
-    let domLists = '';
-    config.forEach((item) => {
-      let switchStatus = item.status == 'close' ? `background: ${item.color};` : '';
-      const switchTransform = item.rotate == 90 ? `transform-origin: 0% 0%;transform: translateX(${defaultConfig.height}px) rotate(90deg);` : '';
+      .diagram {
+        width: 3812px;
+        height: 2160px;
+        /* background: url("./image/left.jpg") no-repeat; */
+        background: url("./image/right.jpg") no-repeat;
+        position: relative;
+      }
 
-      const PQIVal = lists.filter(ele => item.id == ele[0])[0];
-      if (!PQIVal) return;
-      // 实时开关状态
-      switchStatus = PQIVal[1] == 'close' ? `background: ${item.color};` : '';
-      const switchP = PQIVal[2];
-      const switchQ = PQIVal[3];
-      const switchI = PQIVal[4];
+      .diagram .part {
+        width: 62px;
+        height: 32px;
+      }
 
-      domLists += `
+      .diagram .part .switch {
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+        box-sizing: border-box;
+        border: 6px solid #ccc;
+      }
+
+      .diagram .part .pqi {
+        font-size: 20px;
+        font-family: "siyuan";
+        color: #fff;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="diagram" class="diagram"></div>
+  </body>
+
+  <script>
+    const config = {
+      // 公共
+      width: 100, // 宽度
+      height: 50, // 高度
+      fontSize: 50, // 电流/有功文本大小
+      fontFamily: "siyuan", // 电流/有功文本类型
+      fontColor: "#fff", // 电流/有功文本颜色
+      radius: 15, // 圆角
+      defaultColor: "#0b1f50", // 底色
+      isYouGong: true, // 是否展示有功
+      isYouGong: true, // 是否展示无功
+      isDianLiu: true, // 是否展示电流
+
+      // 单个
+      id: "1000001", // 开关唯一标识
+      name: "陈高371", // 开关名称
+      status: "open", // open/close 开关状态
+      rotate: 90, // 旋转角度
+      color: "#e53333", // 颜色
+      position: [0, 0], // 开关位置
+      PQIPosition: [0, 0], // PQI位置
+    };
+    const data = ["id", "状态", "电流", "有功"];
+
+    const defaultConfig = {
+      width: 62,
+      height: 32,
+      radius: 15,
+      defaultColor: "#0b1f50",
+      fontSize: 50,
+      fontFamily: "siyuan",
+      fontColor: "#fff",
+    };
+
+    // 获取开关配置文件
+    function getJsonData() {
+      let dataObj = undefined;
+      $.ajax({
+        url: "./right.json",
+        type: "GET",
+        dataType: "json",
+        async: false,
+        success: function (data) {
+          dataObj = data;
+        },
+      });
+      return dataObj.config;
+    }
+
+    const dataLists = [
+      ["1000001", "close", "20", "30", "40"],
+      ["1000002", "close", "20", "30", "40"],
+      ["1000003", "open", "20", "30", "40"],
+      ["1000004", "close", "20", "30", "40"],
+      ["1000005", "close", "20", "30", "40"],
+      ["1000006", "open", "20", "30", "40"],
+      ["1000007", "close", "20", "30", "40"],
+    ];
+    const switchConfig = getJsonData();
+
+    function setDomLists(config, lists) {
+      let domLists = "";
+      config.forEach((item) => {
+        let switchStatus =
+          item.status == "close" ? `background: ${item.color};` : "";
+        const switchTransform =
+          item.rotate == 90
+            ? `transform-origin: 0% 0%;transform: translateX(${defaultConfig.height}px) rotate(90deg);`
+            : "";
+
+        const PQIVal = lists.filter((ele) => item.id == ele[0])[0];
+        let switchP = "";
+        let switchQ = "";
+        let switchI = "";
+        if (!PQIVal) {
+          // 实时开关状态
+          switchP = "0";
+          switchQ = "0";
+          switchI = "0";
+        } else {
+          console.log(PQIVal);
+          // 实时开关状态
+          switchStatus =
+            PQIVal[1] == "close" ? `background: ${item.color};` : "";
+          switchP = PQIVal[2];
+          switchQ = PQIVal[3];
+          switchI = PQIVal[4];
+        }
+
+        domLists += `
         <div 
-          class="part" 
+          class="part"
+          data-key="${item.id}"
           style="
             position: absolute;
             top: ${item.position[0]}px;
@@ -152,13 +168,11 @@
           >
             P:${switchP}<br />Q:${switchQ}<br />I:${switchI}
           </div>
-        </div>`
-    })
-    return domLists;
-  }
-
-  let htmlDom = setDomLists(switchConfig, dataLists);
-  $('.diagram').html(htmlDom)
-</script>
-
+        </div>`;
+      });
+      return domLists;
+    }
+    let htmlDom = setDomLists(switchConfig, dataLists);
+    $(".diagram").html(htmlDom);
+  </script>
 </html>

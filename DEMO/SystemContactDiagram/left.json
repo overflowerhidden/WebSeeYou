@@ -1,0 +1,724 @@
+{
+  "config": [
+    {
+      "id": "1000001",
+      "name": "华祥371",
+      "status": "open",
+      "rotate": 90,
+      "color": "#44e97e",
+      "position": [
+        398,
+        955
+      ],
+      "PQIPosition": [
+        0,
+        -50
+      ]
+    },
+    {
+      "id": "1000002",
+      "name": "凤程371",
+      "status": "open",
+      "rotate": 90,
+      "color": "#44e97e",
+      "position": [
+        398,
+        1232
+      ],
+      "PQIPosition": [
+        0,
+        -50
+      ]
+    },
+    {
+      "id": "1000003",
+      "name": "陈高371",
+      "status": "open",
+      "rotate": 90,
+      "color": "#44e97e",
+      "position": [
+        398,
+        1548
+      ],
+      "PQIPosition": [
+        0,
+        50
+      ]
+    },
+    {
+      "id": "1000004",
+      "name": "宝西370",
+      "status": "open",
+      "rotate": 90,
+      "color": "#44e97e",
+      "position": [
+        398,
+        1823
+      ],
+      "PQIPosition": [
+        0,
+        -50
+      ]
+    },
+    {
+      "id": "1000005",
+      "name": "35kV宝塔变",
+      "status": "open",
+      "rotate": 0,
+      "color": "#44e97e",
+      "position": [
+        339,
+        1674
+      ],
+      "PQIPosition": [
+        35,
+        10
+      ]
+    },
+    {
+      "id": "1000006",
+      "name": "陈高371",
+      "status": "open",
+      "rotate": 0,
+      "color": "#44e97e",
+      "position": [
+        532,
+        944
+      ],
+      "PQIPosition": [
+        25,
+        70
+      ]
+    },
+    {
+      "id": "1000007",
+      "name": "陈钟372",
+      "status": "close",
+      "rotate": 0,
+      "color": "#44e97e",
+      "position": [
+        722,
+        1098
+      ],
+      "PQIPosition": [
+        -70,
+        70
+      ]
+    },
+    {
+      "id": "1000008",
+      "name": "钟陈372",
+      "status": "close",
+      "rotate": 0,
+      "color": "#44e97e",
+      "position": [
+        722,
+        1397
+      ],
+      "PQIPosition": [
+        30,
+        10
+      ]
+    },
+    {
+      "id": "1000009",
+      "name": "生物374",
+      "status": "close",
+      "rotate": 0,
+      "color": "#44e97e",
+      "position": [
+        817,
+        1099
+      ],
+      "PQIPosition": [
+        -70,
+        70
+      ]
+    },
+    {
+      "id": "1000010",
+      "name": "陈东376",
+      "status": "close",
+      "rotate": 0,
+      "color": "#44e97e",
+      "position": [
+        915,
+        1100
+      ],
+      "PQIPosition": [
+        -70,
+        70
+      ]
+    },
+    {
+      "id": "1000011",
+      "name": "母分310",
+      "status": "close",
+      "rotate": 0,
+      "color": "#f53132",
+      "position": [
+        1073,
+        687
+      ],
+      "PQIPosition": [
+        25,
+        70
+      ]
+    },
+    {
+      "id": "1000012",
+      "name": "钟西371",
+      "status": "close",
+      "rotate": 0,
+      "color": "#44e97e",
+      "position": [
+        721,
+        1675
+      ],
+      "PQIPosition": [
+        30,
+        10
+      ]
+    },
+    {
+      "id": "1000013",
+      "name": "陈东376",
+      "status": "close",
+      "rotate": 0,
+      "color": "#44e97e",
+      "position": [
+        914,
+        1812
+      ],
+      "PQIPosition": [
+        30,
+        10
+      ]
+    },
+    {
+      "id": "1000014",
+      "name": "西宝370",
+      "status": "close",
+      "rotate": 0,
+      "color": "#44e97e",
+      "position": [
+        658,
+        2068
+      ],
+      "PQIPosition": [
+        -70,
+        70
+      ]
+    },
+    {
+      "id": "1000015",
+      "name": "西钟371",
+      "status": "close",
+      "rotate": 0,
+      "color": "#44e97e",
+      "position": [
+        721,
+        2205
+      ],
+      "PQIPosition": [
+        30,
+        10
+      ]
+    },
+    {
+      "id": "1000016",
+      "name": "母分310",
+      "status": "close",
+      "rotate": 90,
+      "color": "#29a2f6",
+      "position": [
+        515,
+        2347
+      ],
+      "PQIPosition": [
+        0,
+        100
+      ]
+    },
+    {
+      "id": "1000017",
+      "name": "西草372",
+      "status": "close",
+      "rotate": 0,
+      "color": "#44e97e",
+      "position": [
+        722,
+        2482
+      ],
+      "PQIPosition": [
+        30,
+        10
+      ]
+    },
+    {
+      "id": "1000018",
+      "name": "西上375",
+      "status": "close",
+      "rotate": 0,
+      "color": "#44e97e",
+      "position": [
+        401,
+        2620
+      ],
+      "PQIPosition": [
+        -38,
+        70
+      ]
+    },
+    {
+      "id": "1000019",
+      "name": "冈东374",
+      "status": "close",
+      "rotate": 0,
+      "color": "#44e97e",
+      "position": [
+        466,
+        2621
+      ],
+      "PQIPosition": [
+        20,
+        70
+      ]
+    },
+    {
+      "id": "1000020",
+      "name": "盐上381",
+      "status": "close",
+      "rotate": 0,
+      "color": "#44e97e",
+      "position": [
+        337,
+        2898
+      ],
+      "PQIPosition": [
+        -70,
+        70
+      ]
+    },
+    {
+      "id": "1000021",
+      "name": "西上375",
+      "status": "close",
+      "rotate": 0,
+      "color": "#44e97e",
+      "position": [
+        402,
+        2898
+      ],
+      "PQIPosition": [
+        -38,
+        70
+      ]
+    },
+    {
+      "id": "1000022",
+      "name": "冈东374",
+      "status": "close",
+      "rotate": 0,
+      "color": "#44e97e",
+      "position": [
+        466,
+        2898
+      ],
+      "PQIPosition": [
+        -10,
+        70
+      ]
+    },
+    {
+      "id": "1000023",
+      "name": "冈草371",
+      "status": "close",
+      "rotate": 0,
+      "color": "#44e97e",
+      "position": [
+        593,
+        2898
+      ],
+      "PQIPosition": [
+        -38,
+        70
+      ]
+    },
+    {
+      "id": "1000024",
+      "name": "草冈371",
+      "status": "close",
+      "rotate": 0,
+      "color": "#44e97e",
+      "position": [
+        658,
+        2898
+      ],
+      "PQIPosition": [
+        -10,
+        70
+      ]
+    },
+    {
+      "id": "1000025",
+      "name": "草西372",
+      "status": "close",
+      "rotate": 0,
+      "color": "#44e97e",
+      "position": [
+        722,
+        2898
+      ],
+      "PQIPosition": [
+        20,
+        70
+      ]
+    },
+    {
+      "id": "1000026",
+      "name": "35kV冈东变",
+      "status": "close",
+      "rotate": 90,
+      "color": "#44e97e",
+      "position": [
+        516,
+        3189
+      ],
+      "PQIPosition": [
+        -10,
+        -50
+      ]
+    },
+    {
+      "id": "1000027",
+      "name": "颜蒋372",
+      "status": "close",
+      "rotate": 0,
+      "color": "#44e97e",
+      "position": [
+        1400,
+        684
+      ],
+      "PQIPosition": [
+        -70,
+        70
+      ]
+    },
+    {
+      "id": "1000028",
+      "name": "蒋恒372",
+      "status": "close",
+      "rotate": 0,
+      "color": "#44e97e",
+      "position": [
+        1480,
+        684
+      ],
+      "PQIPosition": [
+        -10,
+        70
+      ]
+    },
+    {
+      "id": "1000029",
+      "name": "恒蒋372",
+      "status": "close",
+      "rotate": 0,
+      "color": "#44e97e",
+      "position": [
+        1559,
+        686
+      ],
+      "PQIPosition": [
+        20,
+        70
+      ]
+    },
+    {
+      "id": "1000030",
+      "name": "颜恒373",
+      "status": "close",
+      "rotate": 0,
+      "color": "#44e97e",
+      "position": [
+        1718,
+        684
+      ],
+      "PQIPosition": [
+        20,
+        70
+      ]
+    },
+    {
+      "id": "1000031",
+      "name": "颜恒373",
+      "status": "close",
+      "rotate": 0,
+      "color": "#44e97e",
+      "position": [
+        1718,
+        1083
+      ],
+      "PQIPosition": [
+        20,
+        70
+      ]
+    },
+    {
+      "id": "1000032",
+      "name": "颜蒋372",
+      "status": "close",
+      "rotate": 0,
+      "color": "#44e97e",
+      "position": [
+        1400,
+        1083
+      ],
+      "PQIPosition": [
+        -70,
+        70
+      ]
+    },
+    {
+      "id": "1000033",
+      "name": "华林374",
+      "status": "close",
+      "rotate": 0,
+      "color": "#44e97e",
+      "position": [
+        1479,
+        1082
+      ],
+      "PQIPosition": [
+        -10,
+        70
+      ]
+    },
+    {
+      "id": "1000034",
+      "name": "母分310",
+      "status": "close",
+      "rotate": 90,
+      "color": "#29a2f6",
+      "position": [
+        1544,
+        1235
+      ],
+      "PQIPosition": [
+        50,
+        -50
+      ]
+    },
+    {
+      "id": "1000035",
+      "name": "35kV恒济变",
+      "status": "close",
+      "rotate": 90,
+      "color": "#44e97e",
+      "position": [
+        1624,
+        540
+      ],
+      "PQIPosition": [
+        0,
+        50
+      ]
+    },
+    {
+      "id": "1000036",
+      "name": "颜沿374",
+      "status": "close",
+      "rotate": 0,
+      "color": "#44e97e",
+      "position": [
+        1639,
+        1397
+      ],
+      "PQIPosition": [
+        20,
+        70
+      ]
+    },
+    {
+      "id": "1000037",
+      "name": "沿颜374",
+      "status": "close",
+      "rotate": 0,
+      "color": "#44e97e",
+      "position": [
+        1639,
+        1674
+      ],
+      "PQIPosition": [
+        20,
+        70
+      ]
+    },
+    {
+      "id": "1000038",
+      "name": "芦沟375",
+      "status": "close",
+      "rotate": 0,
+      "color": "#44e97e",
+      "position": [
+        1639,
+        1953
+      ],
+      "PQIPosition": [
+        20,
+        70
+      ]
+    },
+    {
+      "id": "1000039",
+      "name": "芦沟375",
+      "status": "close",
+      "rotate": 0,
+      "color": "#44e97e",
+      "position": [
+        1639,
+        2344
+      ],
+      "PQIPosition": [
+        20,
+        70
+      ]
+    },
+    {
+      "id": "1000040",
+      "name": "新芦374",
+      "status": "close",
+      "rotate": 0,
+      "color": "#44e97e",
+      "position": [
+        1639,
+        2620
+      ],
+      "PQIPosition": [
+        20,
+        70
+      ]
+    },
+    {
+      "id": "1000041",
+      "name": "新芦374",
+      "status": "close",
+      "rotate": 0,
+      "color": "#44e97e",
+      "position": [
+        1314,
+        2345
+      ],
+      "PQIPosition": [
+        20,
+        70
+      ]
+    },
+    {
+      "id": "1000042",
+      "name": "新芦374",
+      "status": "close",
+      "rotate": 0,
+      "color": "#44e97e",
+      "position": [
+        1394,
+        2897
+      ],
+      "PQIPosition": [
+        20,
+        70
+      ]
+    },
+    {
+      "id": "1000043",
+      "name": "母分310",
+      "status": "close",
+      "rotate": 90,
+      "color": "#f53132",
+      "position": [
+        1442,
+        3187
+      ],
+      "PQIPosition": [
+        55,
+        -45
+      ]
+    },
+    {
+      "id": "1000044",
+      "name": "母分310",
+      "status": "close",
+      "rotate": 90,
+      "color": "#29a2f6",
+      "position": [
+        1058,
+        2081
+      ],
+      "PQIPosition": [
+        5,
+        85
+      ]
+    },
+    {
+      "id": "1000045",
+      "name": "备用375",
+      "status": "close",
+      "rotate": 0,
+      "color": "#44e97e",
+      "position": [
+        914,
+        2345
+      ],
+      "PQIPosition": [
+        -70,
+        70
+      ]
+    },
+    {
+      "id": "1000046",
+      "name": "备用377",
+      "status": "close",
+      "rotate": 0,
+      "color": "#44e97e",
+      "position": [
+        995,
+        2345
+      ],
+      "PQIPosition": [
+        20,
+        70
+      ]
+    },
+    {
+      "id": "1000047",
+      "name": "备用371",
+      "status": "close",
+      "rotate": 0,
+      "color": "#44e97e",
+      "position": [
+        1154,
+        2345
+      ],
+      "PQIPosition": [
+        -40,
+        70
+      ]
+    },
+    {
+      "id": "1000048",
+      "name": "水泥372",
+      "status": "close",
+      "rotate": 0,
+      "color": "#44e97e",
+      "position": [
+        1234,
+        2344
+      ],
+      "PQIPosition": [
+        -10,
+        70
+      ]
+    }
+  ]
+}

@@ -1,0 +1,379 @@
+{
+  "config": [
+    {
+      "id": "1000001",
+      "name": "榆瑞8Y0",
+      "status": "close",
+      "rotate": 90,
+      "color": "#e53333",
+      "position": [
+        321,
+        828
+      ],
+      "PQIPosition": [
+        0,
+        -50
+      ]
+    },
+    {
+      "id": "1000002",
+      "name": "榆瑞8Y0",
+      "status": "close",
+      "rotate": 90,
+      "color": "#e53333",
+      "position": [
+        556,
+        627
+      ],
+      "PQIPosition": [
+        0,
+        -50
+      ]
+    },
+    {
+      "id": "1000003",
+      "name": "榆瑞8Y0",
+      "status": "close",
+      "rotate": 90,
+      "color": "#e53333",
+      "position": [
+        556,
+        824
+      ],
+      "PQIPosition": [
+        0,
+        -50
+      ]
+    },
+    {
+      "id": "1000004",
+      "name": "榆瑞8Y0",
+      "status": "close",
+      "rotate": 90,
+      "color": "#e53333",
+      "position": [
+        556,
+        1019
+      ],
+      "PQIPosition": [
+        0,
+        -50
+      ]
+    },
+    {
+      "id": "1000005",
+      "name": "110kV高作变",
+      "status": "close",
+      "rotate": 90,
+      "color": "#e53333",
+      "position": [
+        642,
+        827
+      ],
+      "PQIPosition": [
+        0,
+        -50
+      ]
+    },
+    {
+      "id": "1000006",
+      "name": "110kV瑞祥变",
+      "status": "close",
+      "rotate": 90,
+      "color": "#e53333",
+      "position": [
+        642,
+        1019
+      ],
+      "PQIPosition": [
+        0,
+        -50
+      ]
+    },
+    {
+      "id": "1000007",
+      "name": "陈站713",
+      "status": "close",
+      "rotate": 90,
+      "color": "#e53333",
+      "position": [
+        726,
+        631
+      ],
+      "PQIPosition": [
+        0,
+        -50
+      ]
+    },
+    {
+      "id": "1000008",
+      "name": "陈瑞714",
+      "status": "close",
+      "rotate": 90,
+      "color": "#e53333",
+      "position": [
+        726,
+        828
+      ],
+      "PQIPosition": [
+        0,
+        -50
+      ]
+    },
+    {
+      "id": "1000009",
+      "name": "陈瑞714",
+      "status": "close",
+      "rotate": 90,
+      "color": "#e53333",
+      "position": [
+        726,
+        1021
+      ],
+      "PQIPosition": [
+        0,
+        -50
+      ]
+    },
+    {
+      "id": "1000010",
+      "name": "陈站713",
+      "status": "close",
+      "rotate": 90,
+      "color": "#e53333",
+      "position": [
+        965,
+        631
+      ],
+      "PQIPosition": [
+        0,
+        -50
+      ]
+    },
+    {
+      "id": "1000011",
+      "name": "陈瑞714",
+      "status": "close",
+      "rotate": 90,
+      "color": "#e53333",
+      "position": [
+        965,
+        925
+      ],
+      "PQIPosition": [
+        0,
+        -50
+      ]
+    },
+    {
+      "id": "1000012",
+      "name": "榆凯722",
+      "status": "close",
+      "rotate": 90,
+      "color": "#e53333",
+      "position": [
+        322,
+        1226
+      ],
+      "PQIPosition": [
+        0,
+        -50
+      ]
+    },
+    {
+      "id": "1000013",
+      "name": "陈明953",
+      "status": "close",
+      "rotate": 90,
+      "color": "#e53333",
+      "position": [
+        1122,
+        542
+      ],
+      "PQIPosition": [
+        0,
+        40
+      ]
+    },
+    {
+      "id": "1000014",
+      "name": "陈明953",
+      "status": "close",
+      "rotate": 90,
+      "color": "#e53333",
+      "position": [
+        1535,
+        542
+      ],
+      "PQIPosition": [
+        -5,
+        -40
+      ]
+    },
+    {
+      "id": "1000015",
+      "name": "明中847",
+      "status": "close",
+      "rotate": 90,
+      "color": "#e53333",
+      "position": [
+        1535,
+        596
+      ],
+      "PQIPosition": [
+        -70,
+        -10
+      ]
+    },
+    {
+      "id": "1000016",
+      "name": "吉明842",
+      "status": "close",
+      "rotate": 90,
+      "color": "#e53333",
+      "position": [
+        1535,
+        646
+      ],
+      "PQIPosition": [
+        -10,
+        90
+      ]
+    },
+    {
+      "id": "1000017",
+      "name": "吉明842",
+      "status": "close",
+      "rotate": 90,
+      "color": "#e53333",
+      "position": [
+        1777,
+        780
+      ],
+      "PQIPosition": [
+        -10,
+        40
+      ]
+    },
+    {
+      "id": "1000018",
+      "name": "吉明842",
+      "status": "close",
+      "rotate": 90,
+      "color": "#e53333",
+      "position": [
+        1523,
+        956
+      ],
+      "PQIPosition": [
+        -10,
+        -40
+      ]
+    },
+    {
+      "id": "1000019",
+      "name": "110kV泽阳变",
+      "status": "close",
+      "rotate": 90,
+      "color": "#e53333",
+      "position": [
+        1610,
+        961
+      ],
+      "PQIPosition": [
+        -10,
+        -40
+      ]
+    },
+    {
+      "id": "1000020",
+      "name": "",
+      "status": "close",
+      "rotate": 90,
+      "color": "#e53333",
+      "position": [
+        1693,
+        961
+      ],
+      "PQIPosition": [
+        -10,
+        -40
+      ]
+    },
+    {
+      "id": "1000021",
+      "name": "吉泽959",
+      "status": "close",
+      "rotate": 90,
+      "color": "#e53333",
+      "position": [
+        1777,
+        961
+      ],
+      "PQIPosition": [
+        -10,
+        -40
+      ]
+    },
+    {
+      "id": "1000022",
+      "name": "陈森Ⅰ951",
+      "status": "close",
+      "rotate": 90,
+      "color": "#e53333",
+      "position": [
+        1122,
+        732
+      ],
+      "PQIPosition": [
+        0,
+        -85
+      ]
+    },
+    {
+      "id": "1000023",
+      "name": "陈森Ⅱ951",
+      "status": "close",
+      "rotate": 90,
+      "color": "#e53333",
+      "position": [
+        1122,
+        828
+      ],
+      "PQIPosition": [
+        50,
+        -40
+      ]
+    },
+    {
+      "id": "1000024",
+      "name": "",
+      "status": "close",
+      "rotate": 90,
+      "color": "#e53333",
+      "position": [
+        1222,
+        732
+      ],
+      "PQIPosition": [
+        0,
+        -40
+      ]
+    },
+    {
+      "id": "1000025",
+      "name": "",
+      "status": "close",
+      "rotate": 90,
+      "color": "#e53333",
+      "position": [
+        1222,
+        828
+      ],
+      "PQIPosition": [
+        0,
+        40
+      ]
+    }
+  ]
+}
